@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_up"
+    app:startDestination="@id/fragmentStart">
+
+    <fragment
+        android:id="@+id/fragmentStart"
+        android:name="com.example.mvvm.FragmentStart"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_fragmentStart_to_viewPagerFragment1"
+            app:destination="@id/viewPagerFragment1"
+            app:popUpTo="@id/fragmentStart"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_fragmentStart_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/fragmentStart"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment1"
+        android:name="com.example.mvvm.viewpager.ViewPagerFragment1"
+        android:label="fragment_view_pager1"
+        tools:layout="@layout/fragment_view_pager1" >
+        <action
+            android:id="@+id/action_viewPagerFragment1_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/viewPagerFragment1"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.mvvm.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+</navigation>
